@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+@import "tailwindcss";
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans:
+        "Montserrat", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+    --gradient-brand: linear-gradient(90deg, #f58220, #6c3130);
+    --color-brand: #f58220;
+    --color-surface-soft: #f4f4f4;
+    --brown: #6c3130;
+    --orange: #f58220;
+
+    --breakpoint-sm: 600px;
+    --breakpoint-md: 820px;
+    --breakpoint-lg: 1100px;
+    --breakpoint-xl: 1400px;
+    --breakpoint-2xl: 1600px;
+}
+
+/* 4. Explicitly apply the variable globally */
+body {
+    font-family: var(--font-sans);
+}
