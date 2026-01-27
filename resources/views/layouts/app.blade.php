@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>{{ $title ?? 'Nano Hospitals' }}</title>
@@ -8,13 +9,20 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
+
 <body class="font-sans">
 
     @include('partials.header')
 
-    <main class=""> {{-- pushes content below fixed header --}}
+    <main>
         @yield('content')
+        <x-scroll-to-top />
+        <x-floating-contact />
     </main>
 
+    {{-- SCRIPTS MUST BE AT THE END --}}
+    @stack('scripts')
+
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ConditionController;
 use App\Http\Controllers\DoctorController;
 use Illuminate\Support\Facades\Route;
@@ -11,8 +12,12 @@ Route::get('/', function () {
 });
 
 
-
-
+Route::get('/second-opinion', function () {
+    return view('second-opinion');
+});
+Route::get('/international-patients', function () {
+    return view('international-patients');
+});
 
 Route::get('/specialities/{slug}', function ($slug) {
     $speciality = Speciality::with('faqs')->where('slug', $slug)->firstOrFail();
@@ -29,3 +34,5 @@ Route::get('/doctors/{doctor:slug}', function (Doctor $doctor) {
 })->name('doctors.show');
 
 Route::get('/conditions/{slug}', [ConditionController::class, 'show'])->name('conditions.show');
+
+Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
