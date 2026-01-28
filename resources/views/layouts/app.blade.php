@@ -31,6 +31,7 @@
         @yield('content')
         <x-scroll-to-top />
         <x-floating-contact />
+        <x-footer />
     </main>
 
     @stack('scripts')
