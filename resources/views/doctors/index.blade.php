@@ -40,53 +40,48 @@
     </style>
 
     {{-- FILTER BAR --}}
-    <div class="max-w-[1200px] mx-auto px-4  flex justify-between px-20">
-        <div class="flex items-center gap-3 flex-wrap">
-            @php $location = request('location', 'All'); @endphp
+    {{-- FILTER BAR --}}
+    <div class="max-w-[1200px] mx-auto px-4 mt-10 flex flex-wrap gap-4 items-center justify-between">
 
-            @foreach (['All', 'Both', 'Uttarahalli', 'Hulimavu'] as $loc)
-                <a href="{{ route('doctors.index', ['location' => $loc, 'specialty' => request('specialty')]) }}"
-                    class="pill {{ $location === $loc ? 'active' : '' }}">
-                    {{ $loc === 'Both' ? 'Both Locations' : $loc }}
-                </a>
-            @endforeach
-        </div>
+        <form method="GET" action="{{ route('doctors.index') }}" class="flex flex-wrap gap-4 items-center w-full lg:w-auto">
 
-        <div class="relative">
-            <button id="specialtyBtn" class="pill pill-red flex items-center gap-2" type="button">
-                <span id="specialtyLabel">
-                    {{ request('specialty', 'All Specialty') }}
-                </span>
-                <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" stroke-width="2"
-                    viewBox="0 0 24 24">
-                    <path d="M6 9l6 6 6-6" />
-                </svg>
+            {{-- LOCATION DROPDOWN --}}
+            <div class="relative w-48">
+                <select name="location" class="w-full pill appearance-none pr-10 cursor-pointer">
+                    @php $location = request('location', 'All'); @endphp
+                    <option value="All" {{ $location == 'All' ? 'selected' : '' }}>All Locations</option>
+                    <option value="Both" {{ $location == 'Both' ? 'selected' : '' }}>Both Locations</option>
+                    <option value="Uttarahalli" {{ $location == 'Uttarahalli' ? 'selected' : '' }}>Uttarahalli</option>
+                    <option value="Hulimavu" {{ $location == 'Hulimavu' ? 'selected' : '' }}>Hulimavu</option>
+                </select>
+            </div>
+
+            {{-- SPECIALTY DROPDOWN --}}
+            <div class="relative w-56">
+                <select name="specialty" class="w-full pill appearance-none pr-10 cursor-pointer">
+                    <option value="All">All Specialties</option>
+                    @foreach ($specialities as $spec)
+                        <option value="{{ $spec->name }}" {{ request('specialty') == $spec->name ? 'selected' : '' }}>
+                            {{ $spec->name }}
+                        </option>
+                    @endforeach
+                </select>
+            </div>
+
+            {{-- SEARCH INPUT --}}
+            <div class="relative w-64">
+                <input type="text" name="search" value="{{ request('search') }}" placeholder="Search doctor name..."
+                    class="pill w-full pl-4 pr-4" />
+            </div>
+
+            {{-- SUBMIT BUTTON --}}
+            <button type="submit" class="pill pill-red">
+                Search
             </button>
 
-            <div id="specialtyDropdown"
-                class="absolute left-0 mt-2 w-56 bg-white border rounded-xl shadow-xl hidden z-50 max-h-96 overflow-y-auto">
-
-                <ul class="text-sm text-gray-700 py-2">
-                    <li>
-                        <a href="{{ route('doctors.index', ['location' => request('location'), 'specialty' => 'All']) }}"
-                            class="block specialty-option">All Specialty</a>
-                    </li>
-
-                    @foreach ($specialities as $spec)
-                        <li>
-                            <a href="{{ route('doctors.index', ['location' => request('location'), 'specialty' => $spec->name]) }}"
-                                class="block specialty-option">
-
-
-                                {{ $spec->name }}
-                            </a>
-                        </li>
-                    @endforeach
-                </ul>
-            </div>
-        </div>
-
+        </form>
     </div>
+
 
     {{-- GRID LAYOUT ONLY --}}
     <section class="w-full mt-28">

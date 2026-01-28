@@ -12,28 +12,29 @@ class DoctorController extends Controller
     {
         $query = Doctor::with('speciality');
 
-        // Filter by location
+        // LOCATION FILTER
         if ($request->filled('location') && $request->location !== 'All') {
             if ($request->location === 'Both') {
-                $query->where('location', 'Both');
+                $query->whereIn('location', ['Uttarahalli', 'Hulimavu']); 
             } else {
                 $query->where('location', $request->location);
             }
         }
 
-        // Filter by speciality
+        // SPECIALTY FILTER
         if ($request->filled('specialty') && $request->specialty !== 'All') {
             $query->whereHas('speciality', function ($q) use ($request) {
                 $q->where('name', $request->specialty);
             });
         }
 
+        // 🔍 DOCTOR NAME SEARCH (NEW)
+        if ($request->filled('search')) {
+            $query->where('name', 'LIKE', '%' . $request->search . '%');
+        }
+
         $doctors = $query->oldest()->paginate(9)->withQueryString();
-
         $specialities = Speciality::orderBy('name')->get();
-
-
-     
 
         return view('doctors.index', compact('doctors', 'specialities'));
     }
