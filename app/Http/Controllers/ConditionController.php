@@ -81,4 +81,10 @@ class ConditionController extends Controller
     {
         //
     }
+
+
+    public function searchableAs()
+    {
+        return 'conditions';
+    }
 }

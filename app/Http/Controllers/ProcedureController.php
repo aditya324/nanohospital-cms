@@ -42,4 +42,11 @@ class ProcedureController extends Controller
 
         return view('procedures.show', compact('procedure'));
     }
+
+
+
+    public function searchableAs()
+    {
+        return 'procedures';
+    }
 }

@@ -15,7 +15,7 @@ class DoctorController extends Controller
         // LOCATION FILTER
         if ($request->filled('location') && $request->location !== 'All') {
             if ($request->location === 'Both') {
-                $query->whereIn('location', ['Uttarahalli', 'Hulimavu']); 
+                $query->whereIn('location', ['Uttarahalli', 'Hulimavu']);
             } else {
                 $query->where('location', $request->location);
             }
@@ -37,5 +37,12 @@ class DoctorController extends Controller
         $specialities = Speciality::orderBy('name')->get();
 
         return view('doctors.index', compact('doctors', 'specialities'));
+    }
+
+
+
+    public function searchableAs()
+    {
+        return 'doctors';
     }
 }

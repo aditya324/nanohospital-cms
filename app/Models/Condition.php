@@ -4,9 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Laravel\Scout\Searchable;
 
 class Condition extends Model
 {
+
+    use Searchable;
     protected $fillable = [
         'name',
         'slug',

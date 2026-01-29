@@ -4,6 +4,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ConditionController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\ProcedureController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Speciality;
 use App\Models\Doctor;
@@ -87,3 +88,7 @@ Route::get('/careers', function () {
 Route::get('/patient-testimonials', function () {
     return view('patient-testimonials');
 });
+
+
+
+

@@ -39,19 +39,22 @@
             <div class="hidden md:flex justify-center w-full pt-3 z-50 relative">
                 <div class="flex w-full max-w-[1020px] items-center bg-white shadow-md rounded-full p-3 mx-4">
                     <div class="relative w-full">
-                        <input type="text" placeholder="Search for Doctors Specialty, Condition..."
+                        <input id="globalSearch" type="text" placeholder="Search for Doctors, Specialty, Condition..."
                             class="w-full rounded-full border border-gray-200 py-3 pl-5 pr-12 text-sm md:text-base text-[#737373] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-400" />
+
                         <button
                             class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 flex items-center justify-center rounded-full bg-red-500 hover:bg-red-600 transition">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-white" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z" />
-                            </svg>
+                            <!-- icon -->
                         </button>
+
+                        <!-- RESULTS DROPDOWN -->
+                        <div id="searchResults"
+                            class="absolute left-0 right-0 mt-2 bg-white rounded-2xl shadow-xl border border-gray-100 hidden max-h-[400px] overflow-y-auto z-50">
+                        </div>
                     </div>
                 </div>
             </div>
+
 
             <!-- CONTENT WRAPPER -->
             <div
@@ -266,7 +269,7 @@
 
             <!-- Our Hospitals -->
             <!-- <a href="/hospitals"
-            class="group flex items-center gap-4
+                class="group flex items-center gap-4
               w-full h-14 px-6
               rounded-2xl border border-gray-300
               text-gray-500 font-medium
@@ -274,12 +277,12 @@
               active:-translate-y-1 active:scale-[0.98]
               active:shadow-lg focus-visible:shadow-lg">
 
-            <img
-              src="./assets/icons/doctor.png"
-              alt=""
-              class="group-hover:scale-110 transition-transform duration-300 w-10 h-10">
-            Conditions
-          </a> -->
+                <img
+                  src="./assets/icons/doctor.png"
+                  alt=""
+                  class="group-hover:scale-110 transition-transform duration-300 w-10 h-10">
+                Conditions
+              </a> -->
 
 
             <!-- Doctors -->
@@ -1250,264 +1253,271 @@
 
 
 
- <section class="w-full py-20 ">
-    <h3 class="text-center text-2xl font-semibold text-gray-600 mb-14">
-      Notable Faces. Nano Care.
-    </h3>
+    <section class="w-full py-20 ">
+        <h3 class="text-center text-2xl font-semibold text-gray-600 mb-14">
+            Notable Faces. Nano Care.
+        </h3>
 
-    <div class="flex justify-center gap-10   flex-wrap ">
-      <div class="max-w-sm  overflow-hidden shadow-lg rounded-2xl">
-        <img loading="lazy" class="w-full" src="./assets/actor.png" alt="Sunset in the mountains">
-        <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2 text-[#FA424A]">Aasif Kshathriya</div>
-          <p class="text-[#737373] text-base">
-            Indian Film Actor, Director & Writer </p>
-          <p class="text-[#737373] text-base mt-5">
-            Nano Hospital feels like home. Dr. Mohan, Anand, Mahima, and the emergency team provide compassionate care with a healing touch. I vouch for Nano Hospitals. </p>
+        <div class="flex justify-center gap-10   flex-wrap ">
+            <div class="max-w-sm  overflow-hidden shadow-lg rounded-2xl">
+                <img loading="lazy" class="w-full" src="./assets/actor.png" alt="Sunset in the mountains">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2 text-[#FA424A]">Aasif Kshathriya</div>
+                    <p class="text-[#737373] text-base">
+                        Indian Film Actor, Director & Writer </p>
+                    <p class="text-[#737373] text-base mt-5">
+                        Nano Hospital feels like home. Dr. Mohan, Anand, Mahima, and the emergency team provide
+                        compassionate care with a healing touch. I vouch for Nano Hospitals. </p>
+                </div>
+
+            </div>
+            <div class="max-w-sm  overflow-hidden shadow-lg rounded-2xl">
+                <img loading="lazy" class="w-full" src="./assets/actor2.png" alt="Sunset in the mountains">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2 text-[#FA424A]">Shwetha Srinivasa</div>
+                    <p class="text-[#737373] text-base">
+                        Kannada Film Actor</p>
+                    <p class="text-[#737373] text-base mt-5">
+                        After my hand treatment with Dr. Mohan, I feel pain-free, confident, and truly cared for — forever
+                        grateful.</p>
+                </div>
+
+            </div>
+            <div class="max-w-sm  overflow-hidden shadow-lg rounded-2xl">
+                <img loading="lazy" class="w-full" src="./assets/actor-3.png" alt="Sunset in the mountains">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2 text-[#FA424A]">Aniish Tejeshwar</div>
+                    <p class="text-[#737373] text-base">
+                        Kannada Film Actor </p>
+                    <p class="text-[#737373] text-base mt-5">
+                        Grateful to experience care that’s honest, attentive, and truly human — Nano Hospital stands out.
+                    </p>
+                </div>
+
+            </div>
         </div>
 
-      </div>
-      <div class="max-w-sm  overflow-hidden shadow-lg rounded-2xl">
-        <img loading="lazy" class="w-full" src="./assets/actor2.png" alt="Sunset in the mountains">
-        <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2 text-[#FA424A]">Shwetha Srinivasa</div>
-          <p class="text-[#737373] text-base">
-            Kannada Film Actor</p>
-          <p class="text-[#737373] text-base mt-5">
-            After my hand treatment with Dr. Mohan, I feel pain-free, confident, and truly cared for — forever grateful.</p>
-        </div>
-
-      </div>
-      <div class="max-w-sm  overflow-hidden shadow-lg rounded-2xl">
-        <img loading="lazy" class="w-full" src="./assets/actor-3.png" alt="Sunset in the mountains">
-        <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2 text-[#FA424A]">Aniish Tejeshwar</div>
-          <p class="text-[#737373] text-base">
-            Kannada Film Actor </p>
-          <p class="text-[#737373] text-base mt-5">
-            Grateful to experience care that’s honest, attentive, and truly human — Nano Hospital stands out. </p>
-        </div>
-
-      </div>
-    </div>
-
-  </section>
+    </section>
 
 
 
- <section class="w-full py-28 lg:mt-20 relative overflow-hidden">
+    <section class="w-full py-28 lg:mt-20 relative overflow-hidden">
 
-    <!-- Dotted Background -->
-    <div
-      class="absolute inset-0
+        <!-- Dotted Background -->
+        <div
+            class="absolute inset-0
              bg-[#f5f5f5]
              bg-[radial-gradient(circle,_#bdbdbd_1px,_transparent_1px)]
              [background-size:22px_22px]">
-    </div>
-
-    <div class="relative max-w-7xl mx-auto px-6">
-
-      <!-- Heading -->
-      <h2 class="text-center text-3xl font-semibold text-[#737373] mb-14">
-        Awards & Recognition
-      </h2>
-
-      <!-- Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 justify-items-center">
-
-        <!-- Card 1 -->
-        <div class="bg-white w-full max-w-md rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] px-8 py-6 flex items-center gap-6">
-          <img loading="lazy" src="./assets/icons/Vector (1).png" class="w-10" alt="">
-          <div class="text-center flex-1">
-            <p class="text-red-500 font-medium">2023</p>
-            <p class="text-gray-600 mt-2">Times Health Excellence</p>
-            <p class="text-red-500 font-medium">
-              Excellence in Tertiary Care Hospital
-            </p>
-            <p class="text-[#737373] mt-1">Nano Hospitals</p>
-          </div>
-          <img loading="lazy" src="./assets/icons/Vector (2).png" class="w-10" alt="">
         </div>
 
-        <!-- Card 2 -->
-        <div class="bg-white w-full max-w-md rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] px-8 py-6 flex items-center gap-6">
-          <img loading="lazy" src="./assets/icons/Vector (1).png" class="w-10" alt="">
-          <div class="text-center flex-1">
-            <p class="text-red-500 font-medium">2023</p>
-            <p class="text-gray-600 mt-2">Radio City Business Titans</p>
-            <p class="text-red-500 font-medium">
-              Best Healthcare Facility
-            </p>
-            <p class="text-[#737373] mt-1">Nano Hospitals</p>
-          </div>
-          <img loading="lazy" src="./assets/icons/Vector (2).png" class="w-10" alt="">
-        </div>
+        <div class="relative max-w-7xl mx-auto px-6">
 
-        <!-- Card 3 -->
-        <div class="bg-white w-full max-w-md rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] px-8 py-6 flex items-center gap-6">
-          <img loading="lazy" src="./assets/icons/Vector (1).png" class="w-10" alt="">
-          <div class="text-center flex-1">
-            <p class="text-red-500 font-medium">2023</p>
-            <p class="text-gray-600 mt-2">Radio City Business Titans</p>
-            <p class="text-red-500 font-medium">
-              Best Healthcare Facility
-            </p>
-            <p class="text-[#737373] mt-1">Nano Hospitals</p>
-          </div>
-          <img loading="lazy" src="./assets/icons/Vector (2).png" class="w-10" alt="">
-        </div>
+            <!-- Heading -->
+            <h2 class="text-center text-3xl font-semibold text-[#737373] mb-14">
+                Awards & Recognition
+            </h2>
 
-      </div>
-    </div>
-  </section>
- <section id="stats-section" class="w-full py-28">
-    <div class="container mx-auto px-6">
+            <!-- Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 justify-items-center">
 
-      <h2 class="text-center text-2xl md:text-3xl font-semibold text-[#737373] mb-12">
-        Nano Hospitals at a Glance
-      </h2>
+                <!-- Card 1 -->
+                <div
+                    class="bg-white w-full max-w-md rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] px-8 py-6 flex items-center gap-6">
+                    <img loading="lazy" src="./assets/icons/Vector (1).png" class="w-10" alt="">
+                    <div class="text-center flex-1">
+                        <p class="text-red-500 font-medium">2023</p>
+                        <p class="text-gray-600 mt-2">Times Health Excellence</p>
+                        <p class="text-red-500 font-medium">
+                            Excellence in Tertiary Care Hospital
+                        </p>
+                        <p class="text-[#737373] mt-1">Nano Hospitals</p>
+                    </div>
+                    <img loading="lazy" src="./assets/icons/Vector (2).png" class="w-10" alt="">
+                </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 2 -->
+                <div
+                    class="bg-white w-full max-w-md rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] px-8 py-6 flex items-center gap-6">
+                    <img loading="lazy" src="./assets/icons/Vector (1).png" class="w-10" alt="">
+                    <div class="text-center flex-1">
+                        <p class="text-red-500 font-medium">2023</p>
+                        <p class="text-gray-600 mt-2">Radio City Business Titans</p>
+                        <p class="text-red-500 font-medium">
+                            Best Healthcare Facility
+                        </p>
+                        <p class="text-[#737373] mt-1">Nano Hospitals</p>
+                    </div>
+                    <img loading="lazy" src="./assets/icons/Vector (2).png" class="w-10" alt="">
+                </div>
 
-        <div class="bg-white rounded-2xl shadow-lg p-8 text-center relative overflow-hidden">
-          <div class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:12px_12px] opacity-60"></div>
+                <!-- Card 3 -->
+                <div
+                    class="bg-white w-full max-w-md rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] px-8 py-6 flex items-center gap-6">
+                    <img loading="lazy" src="./assets/icons/Vector (1).png" class="w-10" alt="">
+                    <div class="text-center flex-1">
+                        <p class="text-red-500 font-medium">2023</p>
+                        <p class="text-gray-600 mt-2">Radio City Business Titans</p>
+                        <p class="text-red-500 font-medium">
+                            Best Healthcare Facility
+                        </p>
+                        <p class="text-[#737373] mt-1">Nano Hospitals</p>
+                    </div>
+                    <img loading="lazy" src="./assets/icons/Vector (2).png" class="w-10" alt="">
+                </div>
 
-          <div class="relative z-10 space-y-4">
-            <img loading="lazy" src="./assets/icons/stethescope.png" class="mx-auto h-12" alt="">
-            <div class="counter text-4xl font-bold text-red-500" data-target="10">0</div>
-
-            <p class="text-red-500 text-xl font-medium">years</p>
-            <p class="text-gray-400 text-xl">of Medical Experience</p>
-          </div>
-        </div>
-
-        <div class="bg-white rounded-2xl shadow-lg p-8 text-center relative overflow-hidden">
-          <div class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:12px_12px] opacity-60"></div>
-
-          <div class="relative z-10 space-y-4">
-            <img loading="lazy" src="./assets/icons/doctor.png" class="mx-auto h-12" alt="">
-            <div class="counter text-4xl font-bold text-red-500" data-target="100" data-suffix="+">0</div>
-
-            <p class="text-red-500 text-xl font-medium">Medical Specialists</p>
-            <p class="text-gray-400 text-xl">Caring for You</p>
-          </div>
-        </div>
-
-        <div class="bg-white rounded-2xl shadow-lg p-8 text-center relative overflow-hidden">
-          <div class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:12px_12px] opacity-60"></div>
-
-          <div class="relative z-10 space-y-4">
-            <img loading="lazy" src="./assets/icons/knife (2).png" class="mx-auto h-12" alt="">
-            <p class="counter text-4xl font-bold text-red-500" data-target="15000" data-suffix="+">0</p>
-
-            <p class="text-red-500 text-xl font-medium">Surgeries</p>
-            <p class="text-gray-400 text-xl">performed</p>
-          </div>
-        </div>
-
-        <div class="bg-white rounded-2xl shadow-lg p-8 text-center relative overflow-hidden">
-          <div class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:12px_12px] opacity-60"></div>
-
-          <div class="relative z-10 space-y-4">
-            <img loading="lazy" src="./assets/icons/smile.png" class="mx-auto h-12" alt="">
-            <p class="counter text-4xl font-bold text-red-500" data-target="500000" data-suffix="+">0</p>
-
-            <p class="text-red-500 text-xl font-medium">Happy</p>
-            <p class="text-gray-400 text-xl">Patients</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-  <section class="w-full  py-24">
-    <div class="container mx-auto px-6">
-
-      <!-- Heading -->
-      <h2 class="text-center text-2xl md:text-3xl font-semibold text-gray-600 mb-14">
-        Nano Hospitals Near You
-      </h2>
-
-      <!-- Cards Wrapper -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-
-        <!-- Card 1 -->
-        <div class="bg-white rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.15)] overflow-hidden">
-          <!-- Image -->
-          <div class="h-[320px] overflow-hidden">
-            <img
-              src="./assets/uttarahalli.webp"
-              alt="Nano Hospital Uttarahalli"
-              class="w-full h-full object-cover" />
-          </div>
-
-          <!-- Content -->
-          <div class="p-8 text-center space-y-4">
-            <!-- Location -->
-            <div class="flex justify-center items-center gap-2 text-gray-500 text-sm">
-              <span>📍</span>
-              <span>Uttarahalli, Bengaluru</span>
             </div>
-
-            <!-- Title -->
-            <h3 class="text-2xl font-semibold text-[#737373] leading-snug">
-              Nano Hospitals,<br />Uttarahalli, Bengaluru
-            </h3>
-
-            <!-- CTA -->
-            <a
-              href="./uttarahalli.php"
-              class="inline-flex items-center gap-3 text-gray-500 font-medium group">
-              know more
-              <span
-                class="w-8 h-8 rounded-full bg-red-500 text-white flex items-center justify-center
-                     transition-transform group-hover:translate-x-1">
-                →
-              </span>
-            </a>
-          </div>
         </div>
+    </section>
+    <section id="stats-section" class="w-full py-28">
+        <div class="container mx-auto px-6">
 
-        <!-- Card 2 -->
-        <div class="bg-white rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.15)] overflow-hidden">
-          <!-- Image -->
-          <div class="h-[320px] overflow-hidden">
-            <img
-              src="./assets/hulimavu.webp"
-              alt="Nano Hospital Hulimavu"
-              class="w-full h-full object-cover" />
-          </div>
+            <h2 class="text-center text-2xl md:text-3xl font-semibold text-[#737373] mb-12">
+                Nano Hospitals at a Glance
+            </h2>
 
-          <!-- Content -->
-          <div class="p-8 text-center space-y-4">
-            <!-- Location -->
-            <div class="flex justify-center items-center gap-2 text-gray-500 text-sm">
-              <span>📍</span>
-              <span>Hulimavu, Bengaluru</span>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <div class="bg-white rounded-2xl shadow-lg p-8 text-center relative overflow-hidden">
+                    <div
+                        class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:12px_12px] opacity-60">
+                    </div>
+
+                    <div class="relative z-10 space-y-4">
+                        <img loading="lazy" src="./assets/icons/stethescope.png" class="mx-auto h-12" alt="">
+                        <div class="counter text-4xl font-bold text-red-500" data-target="10">0</div>
+
+                        <p class="text-red-500 text-xl font-medium">years</p>
+                        <p class="text-gray-400 text-xl">of Medical Experience</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg p-8 text-center relative overflow-hidden">
+                    <div
+                        class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:12px_12px] opacity-60">
+                    </div>
+
+                    <div class="relative z-10 space-y-4">
+                        <img loading="lazy" src="./assets/icons/doctor.png" class="mx-auto h-12" alt="">
+                        <div class="counter text-4xl font-bold text-red-500" data-target="100" data-suffix="+">0</div>
+
+                        <p class="text-red-500 text-xl font-medium">Medical Specialists</p>
+                        <p class="text-gray-400 text-xl">Caring for You</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg p-8 text-center relative overflow-hidden">
+                    <div
+                        class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:12px_12px] opacity-60">
+                    </div>
+
+                    <div class="relative z-10 space-y-4">
+                        <img loading="lazy" src="./assets/icons/knife (2).png" class="mx-auto h-12" alt="">
+                        <p class="counter text-4xl font-bold text-red-500" data-target="15000" data-suffix="+">0</p>
+
+                        <p class="text-red-500 text-xl font-medium">Surgeries</p>
+                        <p class="text-gray-400 text-xl">performed</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg p-8 text-center relative overflow-hidden">
+                    <div
+                        class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:12px_12px] opacity-60">
+                    </div>
+
+                    <div class="relative z-10 space-y-4">
+                        <img loading="lazy" src="./assets/icons/smile.png" class="mx-auto h-12" alt="">
+                        <p class="counter text-4xl font-bold text-red-500" data-target="500000" data-suffix="+">0</p>
+
+                        <p class="text-red-500 text-xl font-medium">Happy</p>
+                        <p class="text-gray-400 text-xl">Patients</p>
+                    </div>
+                </div>
+
             </div>
-
-            <!-- Title -->
-            <h3 class="text-2xl font-semibold text-[#737373] leading-snug">
-              Nano Hospitals,<br />Hulimavu, Bengaluru
-            </h3>
-
-            <!-- CTA -->
-            <a
-              href="./hulimavu.php"
-              class="inline-flex items-center gap-3 text-gray-500 font-medium group">
-              know more
-              <span
-                class="w-8 h-8 rounded-full bg-red-500 text-white flex items-center justify-center
-                     transition-transform group-hover:translate-x-1">
-                →
-              </span>
-            </a>
-          </div>
         </div>
+    </section>
+    <section class="w-full  py-24">
+        <div class="container mx-auto px-6">
 
-      </div>
-    </div>
-  </section>
+            <!-- Heading -->
+            <h2 class="text-center text-2xl md:text-3xl font-semibold text-gray-600 mb-14">
+                Nano Hospitals Near You
+            </h2>
+
+            <!-- Cards Wrapper -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+
+                <!-- Card 1 -->
+                <div class="bg-white rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.15)] overflow-hidden">
+                    <!-- Image -->
+                    <div class="h-[320px] overflow-hidden">
+                        <img src="./assets/uttarahalli.webp" alt="Nano Hospital Uttarahalli"
+                            class="w-full h-full object-cover" />
+                    </div>
+
+                    <!-- Content -->
+                    <div class="p-8 text-center space-y-4">
+                        <!-- Location -->
+                        <div class="flex justify-center items-center gap-2 text-gray-500 text-sm">
+                            <span>📍</span>
+                            <span>Uttarahalli, Bengaluru</span>
+                        </div>
+
+                        <!-- Title -->
+                        <h3 class="text-2xl font-semibold text-[#737373] leading-snug">
+                            Nano Hospitals,<br />Uttarahalli, Bengaluru
+                        </h3>
+
+                        <!-- CTA -->
+                        <a href="./uttarahalli.php"
+                            class="inline-flex items-center gap-3 text-gray-500 font-medium group">
+                            know more
+                            <span
+                                class="w-8 h-8 rounded-full bg-red-500 text-white flex items-center justify-center
+                     transition-transform group-hover:translate-x-1">
+                                →
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.15)] overflow-hidden">
+                    <!-- Image -->
+                    <div class="h-[320px] overflow-hidden">
+                        <img src="./assets/hulimavu.webp" alt="Nano Hospital Hulimavu"
+                            class="w-full h-full object-cover" />
+                    </div>
+
+                    <!-- Content -->
+                    <div class="p-8 text-center space-y-4">
+                        <!-- Location -->
+                        <div class="flex justify-center items-center gap-2 text-gray-500 text-sm">
+                            <span>📍</span>
+                            <span>Hulimavu, Bengaluru</span>
+                        </div>
+
+                        <!-- Title -->
+                        <h3 class="text-2xl font-semibold text-[#737373] leading-snug">
+                            Nano Hospitals,<br />Hulimavu, Bengaluru
+                        </h3>
+
+                        <!-- CTA -->
+                        <a href="./hulimavu.php" class="inline-flex items-center gap-3 text-gray-500 font-medium group">
+                            know more
+                            <span
+                                class="w-8 h-8 rounded-full bg-red-500 text-white flex items-center justify-center
+                     transition-transform group-hover:translate-x-1">
+                                →
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
 
     <!-- Instagram Video Modal -->
     <!-- Video Modal -->
@@ -1756,4 +1766,73 @@
 
         observer.observe(section);
     </script>
+
+    <script>
+const input = document.getElementById('globalSearch');
+const resultsBox = document.getElementById('searchResults');
+
+let timeout = null;
+
+input.addEventListener('keyup', function () {
+    clearTimeout(timeout);
+
+    const query = this.value.trim();
+
+    if (query.length < 2) {
+        resultsBox.classList.add('hidden');
+        return;
+    }
+
+    timeout = setTimeout(() => {
+        fetch(`/api/search?q=${encodeURIComponent(query)}`)
+            .then(res => res.json())
+            .then(data => {
+                let html = '';
+
+                if (data.specialities.length) {
+                    html += `<div class="p-3 border-b"><p class="text-xs font-semibold text-gray-400 mb-2">Specialities</p>`;
+                    data.specialities.forEach(item => {
+                        html += `<a href="/specialities/${item.slug}" class="block py-1 text-sm hover:text-red-500">${item.name}</a>`;
+                    });
+                    html += `</div>`;
+                }
+
+                if (data.doctors.length) {
+                    html += `<div class="p-3 border-b"><p class="text-xs font-semibold text-gray-400 mb-2">Doctors</p>`;
+                    data.doctors.forEach(item => {
+                        html += `<a href="/doctors/${item.slug}" class="block py-1 text-sm hover:text-red-500">${item.name}</a>`;
+                    });
+                    html += `</div>`;
+                }
+
+                if (data.procedures.length) {
+                    html += `<div class="p-3 border-b"><p class="text-xs font-semibold text-gray-400 mb-2">Procedures</p>`;
+                    data.procedures.forEach(item => {
+                        html += `<a href="/procedures/${item.slug}" class="block py-1 text-sm hover:text-red-500">${item.title}</a>`;
+                    });
+                    html += `</div>`;
+                }
+
+                if (data.conditions.length) {
+                    html += `<div class="p-3"><p class="text-xs font-semibold text-gray-400 mb-2">Conditions</p>`;
+                    data.conditions.forEach(item => {
+                        html += `<a href="/conditions/${item.slug}" class="block py-1 text-sm hover:text-red-500">${item.name}</a>`;
+                    });
+                    html += `</div>`;
+                }
+
+                resultsBox.innerHTML = html;
+                resultsBox.classList.remove('hidden');
+            });
+    }, 300);
+});
+
+// Hide dropdown when clicking outside
+document.addEventListener('click', function (e) {
+    if (!input.contains(e.target) && !resultsBox.contains(e.target)) {
+        resultsBox.classList.add('hidden');
+    }
+});
+</script>
+
 @endsection
