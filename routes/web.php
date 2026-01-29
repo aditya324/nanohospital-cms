@@ -3,6 +3,7 @@
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ConditionController;
 use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\ProcedureController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Speciality;
 use App\Models\Doctor;
@@ -55,19 +56,18 @@ Route::get('/doctors/{doctor:slug}', function (Doctor $doctor) {
     return view('doctors.show', compact('doctor'));
 })->name('doctors.show');
 
+Route::get('/conditions', [ConditionController::class, 'index'])->name('conditions.index');
+
+
 Route::get('/conditions/{slug}', [ConditionController::class, 'show'])->name('conditions.show');
 
 Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
 
+Route::get('/procedures', [ProcedureController::class, 'index'])->name('procedures.index');
 
 
-Route::get('/procedure/{slug}', function ($slug) {
-    $procedure = Procedure::where('slug', $slug)
-        ->where('is_active', true)
-        ->firstOrFail();
+Route::get('/procedures/{slug}', [ProcedureController::class, 'show'])->name('procedures.show');
 
-    return view('procedures.show', compact('procedure'));
-});
 
 
 Route::get('/news-and-media', function () {

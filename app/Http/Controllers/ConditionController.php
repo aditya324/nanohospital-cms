@@ -10,9 +10,27 @@ class ConditionController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $query = Condition::where('is_active', true);
+
+        // Search
+        if ($request->filled('search')) {
+            $query->where('name', 'like', '%' . trim($request->search) . '%');
+        }
+
+        // Alphabet filter
+        if ($request->filled('letter') && $request->letter !== 'ALL') {
+            $query->where('name', 'like', $request->letter . '%');
+        }
+
+        $conditions = $query
+            ->orderBy('sort_order')
+            ->orderBy('name')
+            ->paginate(10)
+            ->withQueryString();
+
+        return view('conditions.index', compact('conditions'));
     }
 
     /**
